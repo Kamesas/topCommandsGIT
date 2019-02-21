@@ -46,6 +46,19 @@ git branch -d branch_name branch_name2
 git push origin :branch_name :branch_name2
 	
 	
+// rename
+
+Переименуйте локальную ветвь
+Если вы находитесь в филиале, вы хотите переименовать:
+
+git branch -m new-name
+Если вы находитесь на другой ветке:
+
+git branch -m old-name new-name
+2. Удалите удаленную ветку старого имени и нажмите локальную ветку нового имени
+git push origin :old-name new-name
+3. Reset ветвь восходящего потока для локальной ветки нового имени
+git push origin -u new-name
 
 	
 </body>
