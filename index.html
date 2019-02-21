@@ -25,9 +25,7 @@
 		<li>git push</li>
 		<li><strong>Мердж конфликт</strong></li>
 		<li>git mergetool</li>
-		<li></li>
-		<li></li>
-		<li></li>
+		
 	</ol>
 	
 git checkout --orphan NEW_BRANCH
@@ -38,6 +36,14 @@ git checkout --orphan NEW_BRANCH && git reset --hard
 git rm -r --cached FolderName
 git commit -m "Removed folder from repository"
 git push origin master
+
+// Delete branchs
+	Удалить локальную ветку можно при помощи команды
+
+git branch -d branch_name branch_name2
+Удалить ветку на удаленном git-сервере можно при помощи команды
+
+git push origin :branch_name :branch_name2
 	
 	
 
