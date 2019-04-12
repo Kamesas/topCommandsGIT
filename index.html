@@ -39,7 +39,43 @@ git checkout --orphan NEW_BRANCH
 git checkout --orphan NEW_BRANCH && git reset --hard
 	
 	
-settings vs code
+
+
+//Steps to remove directory
+
+git rm -r --cached FolderName
+git commit -m "Removed folder from repository"
+git push origin master
+
+// Delete branchs
+	Удалить локальную ветку можно при помощи команды
+
+git branch -d branch_name branch_name2
+Удалить ветку на удаленном git-сервере можно при помощи команды
+
+git push origin :branch_name :branch_name2
+
+// отмена запроса пароля (команда, пароль, ссылка на репозиторий
+	git remote set-url origin https://alexandr-semak:ErodAlgOadyiky3@bitbucket.org/alexandr-semak/live_chat.git
+	
+	
+// rename
+
+
+Переименуйте локальную ветвь
+Если вы находитесь в филиале, вы хотите переименовать:
+
+git branch -m new-name
+Если вы находитесь на другой ветке:
+
+git branch -m old-name new-name
+2. Удалите удаленную ветку старого имени и нажмите локальную ветку нового имени
+git push origin :old-name new-name
+3. Reset ветвь восходящего потока для локальной ветки нового имени
+git push origin -u new-name
+	
+	
+	settings vs code
 {
   "terminal.integrated.rendererType": "dom",
   "php.executablePath": null,
@@ -65,36 +101,6 @@ settings vs code
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnSave": true
 }
-
-//Steps to remove directory
-
-git rm -r --cached FolderName
-git commit -m "Removed folder from repository"
-git push origin master
-
-// Delete branchs
-	Удалить локальную ветку можно при помощи команды
-
-git branch -d branch_name branch_name2
-Удалить ветку на удаленном git-сервере можно при помощи команды
-
-git push origin :branch_name :branch_name2
-	
-	
-// rename
-
-
-Переименуйте локальную ветвь
-Если вы находитесь в филиале, вы хотите переименовать:
-
-git branch -m new-name
-Если вы находитесь на другой ветке:
-
-git branch -m old-name new-name
-2. Удалите удаленную ветку старого имени и нажмите локальную ветку нового имени
-git push origin :old-name new-name
-3. Reset ветвь восходящего потока для локальной ветки нового имени
-git push origin -u new-name
 
 	
 </body>
