@@ -101,6 +101,17 @@ git push origin -u new-name
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnSave": true
 }
+	
+	
+	
+	
+		const session = JSON.parse(window.sessionStorage['persist:root']);
+		const parseSession = Object.keys(session);
+
+		parseSession.forEach(item => {
+			 console.log('[ item ] ', JSON.parse(session[item]))
+		});
+
 
 	
 </body>
