@@ -6,12 +6,6 @@
 </head>
 <body>
 	
-	vs code
-editor.action.jumpToBracket = 
-	http://prntscr.com/nap8eu
-	http://prntscr.com/nap9f6
-format on save
-	
 	<h1>Top GIT commands</h1>
 	<ol>
 		<li>git init</li>
@@ -19,44 +13,46 @@ format on save
 		<li>git commit -m "start"</li>
 		<li>git status</li>
 		<li>git log</li>
+		
 		<li><strong>Branches</strong></li>
+		
 		<li>git branch master2</li>
 		<li>git branch</li>
 		<li>git checkout master2</li>
 		<li>git checkout -b master3</li>
 		<li>git checkout -d master3</li>
 		<li>git merge master2</li>
+		
 		<li><strong>Удаленный репозиторий</strong></li>
+		
 		<li>git clone</li>
 		<li>git pull</li>
 		<li>git push</li>
+		
 		<li><strong>Мердж конфликт</strong></li>
 		<li>git mergetool</li>
 		
 	</ol>
 	
 git checkout --orphan NEW_BRANCH
-git checkout --orphan NEW_BRANCH && git reset --hard
-	
-	
+git checkout --orphan NEW_BRANCH && git reset --hard	
 
 
 //Steps to remove directory
-
 git rm -r --cached FolderName
 git commit -m "Removed folder from repository"
 git push origin master
 
 // Delete branchs
-	Удалить локальную ветку можно при помощи команды
-
+	
+Удалить локальную ветку можно при помощи команды
 git branch -d branch_name branch_name2
+	
 Удалить ветку на удаленном git-сервере можно при помощи команды
-
 git push origin :branch_name :branch_name2
 
-// отмена запроса пароля (команда, пароль, ссылка на репозиторий
-	git remote set-url origin https://alexandr-semak:ErodAlgOadyiky3@bitbucket.org/alexandr-semak/live_chat.git
+// отмена запроса пароля (команда, пароль, ссылка на репозиторий)
+git remote set-url origin https://alexandr-semak:ErodAlgOadyiky3@bitbucket.org/alexandr-semak/live_chat.git
 	
 	
 // rename
@@ -73,6 +69,22 @@ git branch -m old-name new-name
 git push origin :old-name new-name
 3. Reset ветвь восходящего потока для локальной ветки нового имени
 git push origin -u new-name
+	
+Это заменит историю основной ветки BitBucket новой, которую вы сделали локально.
+git push --force -u origin master
+
+Очистить ветку
+git reset --hard 
+
+Чтобы удалить локальную ветвь с вашего устройства:
+git branch -d {the_local_branch} (используйте -D вместо того, чтобы принудительно удалить ветвь без проверки объединенного состояния)
+
+Чтобы удалить сервер удаленную ветвь с сервера:
+git push origin --delete {the_remote_branch}
+
+
+С помощью git commit ‐‐amend вы можете изменить свой предыдущий коммит, вместо того чтобы создавать новый. Если вы не внесли свои изменения в удаленную ветку, можете использовать эту команду для внесения изменений в последний коммит, добавления последних изменений и даже изменения сообщения о коммите.
+git commit ‐‐amend
 	
 	
 	settings vs code
@@ -101,17 +113,11 @@ git push origin -u new-name
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnSave": true
 }
-	
-	
-	
-	
-		const session = JSON.parse(window.sessionStorage['persist:root']);
-		const parseSession = Object.keys(session);
-
-		parseSession.forEach(item => {
-			 console.log('[ item ] ', JSON.parse(session[item]))
-		});
-
+		
+editor.action.jumpToBracket = 
+	http://prntscr.com/nap8eu
+	http://prntscr.com/nap9f6
+format on save
 
 	
 </body>
