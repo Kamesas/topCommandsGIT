@@ -46,7 +46,8 @@ git push origin master
 git branch -d branch_name branch_name2
 	
 Удалить ветку на удаленном git-сервере можно при помощи команды
-git push origin :branch_name :branch_name2
+git push origin :branch_name :branch_name2  - коммиты не удалятся !!!!!!!!!!!!!!!!!!!
+git push origin --delete {the_remote_branch}
 
 // отмена запроса пароля (команда, пароль, ссылка на репозиторий)
 git remote set-url origin https://alexandr-semak:ErodAlgOadyiky3@bitbucket.org/alexandr-semak/live_chat.git	
@@ -88,6 +89,15 @@ git commit ‐‐amend
 git stash
 Команда git stash используется для временного сохранения всех незакоммиченных изменений для очистки рабочей директории
 без необходимости коммитить незавершённую работу в новую ветку.
+	
+Git — Отменить Изменения в Файле
+Отменить все незакоммиченные изменения в файле:
+
+$ git checkout -- <файл>
+Git — Откатить Файл к Предыдущему Коммиту
+Откатить указанный файл до определенной ревизии:
+
+$ git checkout <хэш_коммита> -- <файл>
 	
 
 //settings vs code
