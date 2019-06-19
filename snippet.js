@@ -10,3 +10,13 @@ if (select) {
     select.fireEvent('onchange');
   }
 }
+
+
+
+Object.keys(OlbSession).forEach(function (item) {
+      var current = OlbSession[item];
+      
+      console.log('%c - - - - - [ keys ]  - - - - - ', 'color: green; font-size: 16px;', '\n', current);
+      return current
+
+    });
