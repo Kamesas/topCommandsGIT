@@ -12,6 +12,19 @@ if (select) {
 }
 
 
+var startOlbSession = window.sessionStorage.olbSession && JSON.parse(window.sessionStorage.olbSession);
+	var newOlbSession = {};
+
+	Object.defineProperty(newOlbSession, 'olbSession', {
+		get: function () {
+			return JSON.parse(window.sessionStorage.olbSession);
+		},
+		set: function (value) {
+			newOlbSession = value;
+		},
+	});
+
+
 
 Object.keys(OlbSession).forEach(function (item) {
       var current = OlbSession[item];
