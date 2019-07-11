@@ -1,3 +1,16 @@
+ const users: any[] =
+    props.users && Object.keys(props.users).length
+      ? Object.keys(props.users).map(user => {
+          const userData = props.users[user];
+          return (
+            <li id={user} key={user}>
+              {userData.name} {userData.work}
+            </li>
+          );
+        })
+      : [];
+
+
 select.getElementsByTagName('option')[0].remove();
 
 if (select) {
