@@ -1,4 +1,59 @@
- const users: any[] =
+function moveLPChatOnIPad() {
+		var dragItem = document.querySelectorAll(".lp_header")[0];
+		var windowChat = document.querySelectorAll(".lp_maximized")[0];
+
+    var active = false;
+    var currentX;
+    var initialX;
+    var xOffset = 0;
+    var documentWidth = document.documentElement.offsetWidth;
+    var windowChatWidth = windowChat.offsetWidth;
+    var stopMove =  windowChatWidth - documentWidth + 20;
+
+    document.addEventListener("touchstart", dragStart, false);
+    document.addEventListener("touchend", dragEnd, false);
+    document.addEventListener("touchmove", drag, false);
+
+    function dragStart(e) {
+      if (e.type === "touchstart") {
+        initialX = e.touches[0].clientX - xOffset;
+      } else {
+        initialX = e.clientX - xOffset;
+      }
+      if (dragItem) {
+        active = true;
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      active = false;
+    }
+
+    function drag(e) {
+
+      if (active) {
+        if (e.type === "touchmove") {
+          currentX = e.touches[0].clientX - initialX;
+          if (currentX >= 20) currentX = 20;
+          if (currentX <= stopMove)	currentX = stopMove;
+        } else {
+          currentX = e.clientX - initialX;
+        }
+
+        xOffset = currentX;
+        windowChat && setTranslate(currentX, windowChat);
+      }
+    }
+
+    function setTranslate(xPos, el) {
+     el.style.transform ="translate(" + xPos + "px)";
+    }
+}
+
+
+
+const users: any[] =
     props.users && Object.keys(props.users).length
       ? Object.keys(props.users).map(user => {
           const userData = props.users[user];
