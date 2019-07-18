@@ -1,0 +1,41 @@
+ &-item {
+        text-align: center;
+        padding: 1em;
+        overflow: hidden;
+      }
+
+      &-link {
+        font-size: 1.38em;
+        transform: translate3d(0, 150%, 0);
+        transition: transform .3s .3s ease;
+      }
+    }
+
+    .burger-label {
+      display: block;
+    }
+
+    #burger:checked {
+
+      & ~ .menu {
+
+        &-list {
+          transform: translate3d(0%, 0, 0);
+
+          .menu-item {
+            @for $i from 1 through 10 {
+              &:nth-child(#{$i}) {
+                .menu-link {
+                  transition-delay: #{($i - 1) * 0.3s} ;
+                  color: if($i == 1, red, green) ;
+                }
+              }
+            }
+          }
+
+          .menu-link {
+            transform: translate3d(0, 0, 0);
+            transition-duration: .3s;
+            transition-property: transform;
+          }
+        }
