@@ -1,0 +1,92 @@
+$gray-600: $GREY_500 !default; //text-muted class
+$gray-100: $GREY_100 !default; // light button
+
+// rewriting theme colors vars
+$theme-colors: (
+  "primary": $RED_300,
+  "dark": $BLACK,
+  "grey-300": $GREY_300,
+  "secondary-light": $GREY_400,
+  "secondary": $GREY_500,
+  "secondary-dark": $GREY_600,
+  "very-light": $GREY_50,
+  "very-light-30": $GREY_30,
+  "light": $gray-100,
+  "light-2": $GREY_200,
+  "blue": $BLUE_300,
+  "blue-400": $BLUE_400,
+  "violet": $MAGENTA,
+  "transparent": transparent,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 672px,
+  md: 992px,
+  lg: 1312px,
+);
+
+$container-max-widths: (
+  sm: 650px,
+  md: 960px,
+  lg: 1280px,
+);
+
+// rewriting other bootstrap vars
+$enable-rounded: false;
+$grid-columns: 16;
+$grid-gutter-width: 32px;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacerLoop: 16; // 16px == 1rem
+$step: 2; //loop step
+$max: 100; //max-size 100px
+
+@for $i from 1 through $max / $step {
+  $value: $i * $step;
+  $spacers: map-merge(
+    (
+      "#{$value}px": (
+        $spacer * ($value / $spacerLoop),
+      ),
+    ),
+    $spacers
+  );
+}
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    50px: 50px,
+    25: 25%,
+    30: 30%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto,
+  ),
+  $sizes
+);
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+$h1-font-size: $font-size-base * 5.93; //95px
+$h2-font-size: $font-size-base * 4.25; //68px
+$h3-font-size: $font-size-base * 2.62; //42px
+$h4-font-size: $font-size-base * 1.75; //28px
+$h5-font-size: $font-size-base * 1.43; //23px
+
+$headings-font-family: "GT-America-Extended-500";
+
+$modal-lg: 1110px;
+$modal-md: 890px;
+
+$modal-content-border-width: 0;
+$modal-content-border-color: transparent;
+$modal-content-bg: transparent;
+$modal-inner-padding: 0;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
